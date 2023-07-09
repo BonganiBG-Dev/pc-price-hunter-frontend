@@ -1,8 +1,20 @@
-﻿@page "/home"
+﻿@using pc_part_hunter.Pages.Views.LandingPage.Components
+@using pc_part_hunter.Pages.Components.Banners
+@page "/"
 
-<h2>
-    There are some things tha i can not say
-</h2>
+<section class="mt-20 flex flex-col gap-5">
+    <ComparisonBanner></ComparisonBanner>
+    <StoresBanner></StoresBanner>
+
+    <div class="flex flex-col mt-20">
+        <ul class="flex flex-col gap-24">
+            @for (int i = 0; i < 3; i++)
+            {
+                <TopPicks></TopPicks>
+            }
+        </ul>
+    </div>
+</section>
 
 @code {
 
