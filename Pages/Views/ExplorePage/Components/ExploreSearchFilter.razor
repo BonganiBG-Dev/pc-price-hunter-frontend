@@ -23,11 +23,15 @@
                 <div class="collapse-content">
                     <div class="px-5 py-6 space-y-2">
                         <!-- loop this -->
-                        <div class="flex items-center" *ngFor="let item of categories">
-                            <a (click)="changeCategory(item)" class="cursor-pointer underline hover:text-gray-400">
-                                 {{item.Name}}
+                        @foreach (var category in categories)
+                        {
+                            <div class="flex items-center">
+                                @* On click, change the category and get the values for that category *@
+                                <a class="cursor-pointer underline hover:text-gray-400">
+                                    @category
                                 </a>
-                        </div>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
@@ -46,13 +50,19 @@
                 <div class="collapse-content">
                     <div class="px-5 py-6 space-y-2">
                         <!-- loop this -->
-                        <div class="flex items-center" *ngFor="let item of categories">
-                            <input id={{item._id}} type="checkbox" name={{item._id}} class="w-5 h-5 border-gray-300 rounded" />
+                        @* Loop though each setting option in the category *@
+                        @foreach (var category in categories)
+                        {
+                            
+                            <div class="flex items-center">
+                            <input id={{item._id}} type="checkbox" name={{item._id}}
+                                class="w-5 h-5 border-gray-300 rounded" />
 
                             <label for={{item._id}} class="ml-3 text-sm font-mediumlight">
                                 {{item.Name}}
                             </label>
                         </div>
+                        }
 
                         <div class="pt-2">
                             <button type="button" class="text-xs text-gray-500 underline">
@@ -78,14 +88,21 @@
 
 
 @* <script>
-    window.addEventListener("resize", () => {
-        const desktopScreen = window.innerWidth < 768;
+window.addEventListener("resize", () => {
+const desktopScreen = window.innerWidth < 768;
 
-        document.querySelector("details").open = !desktopScreen;
-    });
+document.querySelector("details").open = !desktopScreen;
+});
 </script> *@
 
 @code {
+
+    private List<string> categories = new List<string>(){
+"one",
+"two",
+"three",
+"four"
+};
 
 }
 
