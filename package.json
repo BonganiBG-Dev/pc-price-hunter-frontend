@@ -1,14 +1,13 @@
 {
-  "name": "pc-part-hunter",
+  "name": "pcparthunter",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Bonganibg",
+  "license": "MIT",
   "devDependencies": {
     "tailwindcss": "^3.3.2"
   },
